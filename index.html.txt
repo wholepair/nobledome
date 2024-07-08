@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble Dome - Air-Free Transfer System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .showcase {
+            background: url('hero_image.png') no-repeat left center/cover;
+            background-size: contain;
+            color: #ffffff;
+            height: 420px;
+            text-align: right;
+            padding: 70px 70px;
+            position: relative;
+            animation: fadeIn 4s ease-in-out;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            flex-direction: row-reverse;
+        }
+        .showcase h1 {
+            font-size: 55px;
+            margin-top: 0;
+            animation: slideInFromTop 3s ease-out;
+            color: #1e3f66; /* Dark blue color */
+            text-shadow: 5px 7px 8px rgba(0, 0, 0, 0.7);
+        }
+        .showcase p {
+            font-size: 27px;
+            animation: slideInFromBottom 3s ease-out;
+            color: #1e3f66; /* Dark blue color */
+            text-shadow: 4px 6px 7px rgba(0, 0, 0, 0.7);
+        }
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-400%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-200);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInFromBottom {
+            0% {
+                transform: translateY(400%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(200);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .content {
+            padding: 20px;
+            background: #ffffff;
+            margin-bottom: 20px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .content img {
+            max-width: 20%;
+        }
+        .content.hidden {
+            opacity: 0;
+        }
+        .footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .brochure-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Noble Dome</h1>
+            <p>The Innovative Air-Free Transfer System</p>
+        </div>
+    </header>
+    
+    <section class="showcase">
+        <div class="container">
+            <h1><right>Preserve Your Air-Sensitive Samples</right></h1>
+            <p><right>Introducing a revolutionary solution for electron microscopy.</right></p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="content features">
+            <h2>Features</h2>
+            <ul>
+                <li>Transparent, airtight dome with gloves for sample manipulation</li>
+                <li>Inlet valves for introducing gas</li>
+                <li>Pressure gauge and relief valve</li>
+                <li>Bluetooth connected oxygen and moisture sensors</li>
+                <li>Airtight chamber with room for prep, tools, transfer systems, and other accessories</li>
+                <li>Rotatable top for variable orientation of the operator’s station</li>
+                <li>Modified argon venting system for the SEM/FIB</li>
+            </ul>
+        </div>
+        
+        <div class="content applications">
+            <h2>Applications</h2>
+            <ul>
+                <li>Battery research</li>
+                <li>Analysis of highly reactive and air-sensitive materials (e.g., Li or Na)</li>
+                <li>Hazardous materials handling</li>
+                <li>Environmental simulation studies</li>
+                <li>Sterile sample investigations</li>
+            </ul>
+        </div>
+        
+        <div class="content benefits">
+            <h2>Benefits</h2>
+            <p>The Noble Dome offers a practical approach for various research needs without restrictions on sample size or stage navigation. It is particularly useful in the field of battery research where highly reactive and air-sensitive materials must not be exposed to the atmosphere. However, its applications extend beyond protecting samples from the atmosphere, encompassing fields such as hazardous materials handling, environmental simulation, and sterile sample workspace.</p>
+        </div>
+        
+        <div class="content gallery">
+            <h2>Gallery</h2>
+            <img src="val.jpg" alt="Noble Dome Image 1">
+            <img src="kurthugs.jpg" alt="Noble Dome Image 2">
+        </div>
+        
+        <div class="content contact">
+            <h2>Contact Us</h2>
+            <p>For more information, please contact us at <a href="mailto:info@nobledome.com">info@nobledome.com</a>.</p>
+        </div>
+        
+        <div class="content brochure">
+            <a href="/NobleDome_Brochure_2024_v3.pdf" class="brochure-link">Download Brochure</a><br><br>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Noble Dome. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('scroll', function() {
+            const features = document.querySelector('.features');
+            const applications = document.querySelector('.applications');
+            const benefits = document.querySelector('.benefits');
+            const gallery = document.querySelector('.gallery');
+            const contact = document.querySelector('.contact');
+            const brochure = document.querySelector('.brochure');
+
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            if (scrollPosition > features.offsetTop + features.offsetHeight / 2) {
+                features.classList.remove('hidden');
+            } else {
+                features.classList.add('hidden');
+            }
+            
+            if (scrollPosition > applications.offsetTop + applications.offsetHeight / 2) {
+                applications.classList.remove('hidden');
+            } else {
+                applications.classList.add('hidden');
+            }
+            
+            if (scrollPosition > benefits.offsetTop + benefits.offsetHeight / 2) {
+                benefits.classList.remove('hidden');
+            } else {
+                benefits.classList.add('hidden');
+            }
+            
+            if (scrollPosition > gallery.offsetTop + gallery.offsetHeight / 2) {
+                gallery.classList.remove('hidden');
+            } else {
+                gallery.classList.add('hidden');
+            }
+            
+            if (scrollPosition > contact.offsetTop + contact.offsetHeight / 2) {
+                contact.classList.remove('hidden');
+            } else {
+                contact.classList.add('hidden');
+            }
+            
+            if (scrollPosition > brochure.offsetTop + brochure.offsetHeight / 2) {
+                brochure.classList.remove('hidden');
+            } else {
+                brochure.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
